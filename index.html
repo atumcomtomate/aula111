@@ -1,0 +1,88 @@
+ 
+<html>
+    <head>
+      <title>Emoção Em Emoji</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+      <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+  
+      <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+  
+    <body>
+    <div class="container">
+    
+      <center>
+
+        <!-- Defina a tag h3. -->
+        <h3 class="btn btn-warning heading">APP EMOÇÃO EM EMOJI
+          <!-- Em seguida, damos uma tag br, que vai adicionar uma quebra de linha -->
+        <br>
+        <!-- adicione tags span para adicionar emojis. Usaremos valores decimais para exibir os emojis. -->
+        <span>&#128522;</span>
+        <span>&#128512;</span>
+        <span>&#128532;</span>
+        <span>&#128546;</span>
+        <span>&#128545;</span>
+        <span>&#128548;</span>
+        <!-- Depois feche a tag h3 -->
+        </h3>
+  
+        <br><br>
+  
+        <p style="font-size: 22px;">Tire sua selfie para gerar o emoji
+            <br>
+          <b style="color: yellow">Você está Feliz?</b>
+          <br>
+          <b style="color: black">Você está Triste?</b>
+          <br>
+          <b style="color: red">Você está Irritado?</b>
+          <br>
+        </p>
+
+        <!-- a adicione uma tag div que será usada para manter a visualização ao vivo da webcam -->
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <label>Visualização da Webcam:</label>
+            <div id="camera"></div>
+            <br><br>
+            <button onclick="takeSnapshot();" class="btn btn-warning">Capturar Imagem</button>
+        </div>
+
+        <!-- a adicione uma tag div que será usada para armazenar as previsões. -->
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <!-- Adicionar uma label para reter Previsão 1 -->
+            <label>Previsão 1: </label>
+            <!-- Adicionar uma tag p para armazenar o nome da emoção vinda do modelo -->
+            <p class="emotionName" id="resultEmotionName"></p>
+            <!-- Adicionar uma tag p para manter a imagem emoji de acordo com a saída do modelo, que é
+baseada na emoção facial -->
+            <p class="emoji" id="updateEmoji"></p>
+  
+            <label>Previsão 2: </label>
+            <p class="emotionName" id="resultEmotionName2"></p>
+            <p class="emoji" id="updateEmoji2"></p>
+          </div>
+  
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <label>Foto: </label>
+            <!-- adicione uma div que será usada para guardar a imagem capturada pela webcam: -->
+            <div id="result"></div>
+            <br><br>
+            <!-- a adicione um botão que irá comparar a imagem capturada com o modelo. -->
+            <button onclick="check();" class="btn btn-success">Prever Emoção</button>
+           </div>
+  
+      </center>
+  
+    </div>
+  
+  <script src="main.js"></script>
+  
+    </body>
+  </html>
+  
+   
